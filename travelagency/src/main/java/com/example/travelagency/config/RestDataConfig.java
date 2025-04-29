@@ -1,6 +1,6 @@
-package edu.wgu.d288_backend.config.travelagency.src.main.java.com.example.travelagency.config;
+package com.example.travelagency.config;
 
-import edu.wgu.d288_backend.entities.*;
+import com.example.travelagency.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
