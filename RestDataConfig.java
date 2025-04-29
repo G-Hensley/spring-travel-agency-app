@@ -1,10 +1,10 @@
 package edu.wgu.d288_backend.config;
 
-import edu.wgu.d288_backend.entities.*;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
+//import edu.wgu.d288_backend.entities.*;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+//import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+//import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 /**
  * <h1>RestDataConfig</h1>
@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
  * @version 0.1
  * @since 2023-02-27
  */
-@Configuration
-public class RestDataConfig implements RepositoryRestConfigurer {
+//@Configuration
+//public class RestDataConfig implements RepositoryRestConfigurer {
 
     /**
      * This method exposes standard rest api end points for the following classes:
@@ -32,17 +32,17 @@ public class RestDataConfig implements RepositoryRestConfigurer {
      * @param config
      * @param cors
      */
-    @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        config.exposeIdsFor(Country.class);
-        config.exposeIdsFor(Customer.class);
-        config.exposeIdsFor(Division.class);
-        config.exposeIdsFor(Excursion.class);
-        config.exposeIdsFor(Vacation.class);
-        config.setDefaultPageSize(Integer.MAX_VALUE);
-        config.setMaxPageSize(Integer.MAX_VALUE);
-
-
-    }
-}
+//    @Override
+//    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+//        config.exposeIdsFor(Country.class);
+//        config.exposeIdsFor(Customer.class);
+//        config.exposeIdsFor(Division.class);
+//        config.exposeIdsFor(Excursion.class);
+//        config.exposeIdsFor(Vacation.class);
+//        config.setDefaultPageSize(Integer.MAX_VALUE);
+//        config.setMaxPageSize(Integer.MAX_VALUE);
+//
+//
+//    }
+//}
 

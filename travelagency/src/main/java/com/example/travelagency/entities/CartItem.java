@@ -8,11 +8,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "cart_items")
 @Getter
 @Setter
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cart_item_id")
     private Long id;
 
     @ManyToOne
@@ -21,7 +23,7 @@ public class CartItem {
 
     @ManyToMany
     @JoinTable(
-            name = "cart_item_excursion",
+            name = "excursion_cartitem",
             joinColumns = @JoinColumn(name = "cart_item_id"),
             inverseJoinColumns = @JoinColumn(name = "excursion_id")
     )
@@ -32,10 +34,10 @@ public class CartItem {
     private Cart cart;
 
     @Column(name = "create_date")
-    private Date createDate;
+    private Date create_date;
 
     @Column(name = "last_update")
-    private Date lastUpdate;
+    private Date last_update;
 
     public CartItem() {
     }
