@@ -1,5 +1,6 @@
 package com.example.travelagency.entities;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.*;
@@ -19,6 +20,7 @@ public class CartItem {
 
     @ManyToOne
     @JoinColumn(name = "vacation_id")
+    @NotNull(message = "Vacation is required")
     private Vacation vacation;
 
     @ManyToMany
