@@ -20,7 +20,6 @@ public class CartItem {
 
     @ManyToOne
     @JoinColumn(name = "vacation_id")
-    @NotNull(message = "Vacation is required")
     private Vacation vacation;
 
     @ManyToMany
@@ -36,11 +35,16 @@ public class CartItem {
     private Cart cart;
 
     @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
     private Date create_date;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.DATE)
     private Date last_update;
 
     public CartItem() {
+    }
+
+    public void setExcursion(Excursion excursion) {
     }
 }

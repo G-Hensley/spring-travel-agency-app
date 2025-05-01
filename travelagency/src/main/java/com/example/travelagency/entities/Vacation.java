@@ -44,9 +44,11 @@ public class Vacation {
     private String image_URL;
 
     @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
     private Date create_date;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.DATE)
     private Date last_update;
 
     @OneToMany(mappedBy = "vacation", cascade = CascadeType.ALL, orphanRemoval = true)

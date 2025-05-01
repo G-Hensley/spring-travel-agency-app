@@ -38,9 +38,11 @@ public class Cart {
     private StatusType status;
 
     @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
     private Date create_date;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.DATE)
     private Date last_update;
 
     @ManyToOne

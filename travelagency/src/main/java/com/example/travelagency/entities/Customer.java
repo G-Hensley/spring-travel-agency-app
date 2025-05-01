@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,9 +48,11 @@ public class Customer {
     private String postal_code;
 
     @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
     private Date create_date;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.DATE)
     private Date last_update;
 
     @ManyToOne
@@ -58,6 +62,18 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Cart> carts = new HashSet<>();
+
+    public Customer(String firstName, String lastName, String address, String postal_code, String phone,
+                    Date create_date, Date last_update, Division division) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postal_code = postal_code;
+        this.phone = phone;
+        this.create_date = create_date;
+        this.last_update = last_update;
+        this.division = division;
+    }
 
     public Customer() {
     }

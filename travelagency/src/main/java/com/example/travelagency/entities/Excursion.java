@@ -38,9 +38,11 @@ public class Excursion {
     private String image_URL;
 
     @Column(name = "create_date")
+    @Temporal(TemporalType.DATE)
     private Date create_date;
 
     @Column(name = "last_update")
+    @Temporal(TemporalType.DATE)
     private Date last_update;
 
     @ManyToOne
