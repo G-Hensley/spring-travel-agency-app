@@ -46,5 +46,8 @@ public class CartItem {
     }
 
     public void setExcursion(Excursion excursion) {
+        if (excursion != null) {
+            this.excursions.add(excursion);
+        }
     }
 }

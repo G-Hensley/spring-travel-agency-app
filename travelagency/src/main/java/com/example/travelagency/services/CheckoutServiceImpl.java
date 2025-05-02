@@ -97,17 +97,20 @@ public class CheckoutServiceImpl implements CheckoutService {
                 throw new IllegalArgumentException("No excursions found for vacation ID: " + vacationId);
             }
 
-            // Create a CartItem for each excursion
+            // Create a single CartItem for all excursions
+            CartItem cartItem = new CartItem();
+            cartItem.setCart(cart);
+            cartItem.setVacation(vacation);
+            cartItem.setCreate_date(new Date());
+            cartItem.setLast_update(new Date());
+            
+            // Add all excursions to the cart item
             for (Excursion excursion : excursions) {
-                CartItem cartItem = new CartItem();
                 cartItem.setExcursion(excursion);
-                cartItem.setCart(cart);
-                cartItem.setVacation(vacation); // Set the vacation field
-                cartItem.setCreate_date(new Date());
-                cartItem.setLast_update(new Date());
-                cartItems.add(cartItem);
-                System.out.println("Created CartItem with excursion: " + excursion + " and vacation: " + vacation);
             }
+            
+            cartItems.add(cartItem);
+            System.out.println("Created CartItem with excursions: " + excursions + " and vacation: " + vacation);
         }
 
         cart.setCartItems(cartItems);
